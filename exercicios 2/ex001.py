@@ -1,11 +1,15 @@
-aluno = {
-    'nome' :'Cazé',
-    'turma' : '3 E',
-    'media' : 7.0
+dados = {
+    'nome': 'Cazé',
+    'telefone':999999999,
+    'email': 'cazeportela@gmail.com',
+    'cidade': 'Rio Pomba',
 }
 
-nome = aluno['nome']
-turma = aluno['turma']
-media = aluno['media']
+dados['instagram'] = '@cazediu'
+del dados['telefone']
+print(dados.items())
 
-print(f"Aluno: {nome} | Turma: {turma} | Média: {media}")
+if 'email' in dados:
+    print("existe email")
+else:
+    print("Não existe email")
