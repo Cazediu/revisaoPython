@@ -18,3 +18,6 @@ with open('manipulação de arquivos/teste.txt','a', encoding='utf-8') as arquiv
 with open('manipulação de arquivos/teste.txt','r', encoding='utf-8') as arquivo:
     conteudo = arquivo.read()
     print(conteudo)
+    
+    
+#testando
