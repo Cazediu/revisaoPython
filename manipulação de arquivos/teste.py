@@ -20,4 +20,3 @@ with open('manipulação de arquivos/teste.txt','r', encoding='utf-8') as arquiv
     print(conteudo)
     
     
-#testando
