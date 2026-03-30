@@ -1,0 +1,35 @@
+Relatório do Projeto - Análise de Músicas Spotify
+
+Nome do dataset: top10s.csv
+Descrição: Dataset com músicas populares do Spotify entre 2010 e 2019.
+
+Quantidade total de registros: 603
+Quantidade de colunas: 15
+
+Estatísticas gerais:
+- Artista mais frequente: Katy Perry (17)
+- Artista menos frequente: Train (1)
+- Gênero mais frequente: dance pop (327)
+- Gênero menos frequente: chicago rap (1)
+- Média de BPM: 118.55
+- Média de Popularidade: 66.52
+- Contagem de registros válidos: 603
+
+Filtros aplicados:
+
+1. Músicas eletrônicas com popularidade acima da média:
+   Quantidade: 26
+   Exemplos: ['Get Lucky (feat. Pharrell Williams & Nile Rodgers) - Radio Edit', 'Lose Yourself to Dance', 'Latch', 'Waves - Robin Schulz Radio Edit', "Runnin' (Lose It All)", "Don't Let Me Down", 'Electric Love', 'Roses', 'All We Know', "Runnin' (Lose It All)"]
+
+2. Artistas com menos popularidade antes de 2016:
+   Quantidade: 133
+   Exemplos: ['Martin Solveig', 'P!nk', 'Justin Timberlake', 'Fergie', 'Nicki Minaj', 'Jennifer Hudson', 'Katy Perry', 'Kelly Rowland', 'Jennifer Lopez', 'Alicia Keys']
+
+3. Artistas com mais popularidade depois de 2016:
+   Quantidade: 109
+   Exemplos: ['Maroon 5', 'Selena Gomez', 'Lewis Capaldi', 'Shawn Mendes', 'Sam Smith', 'Ed Sheeran', 'SHAED', 'Marshmello', 'Lizzo', 'Kygo']
+
+Conclusões:
+- O gênero 'dance pop' domina o dataset com maior número de registros.
+- A popularidade média mostra como apesar de um haver um grande número de musicas.
+- Poucos artistas concentram muitos registros.
