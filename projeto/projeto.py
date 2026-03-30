@@ -5,8 +5,8 @@ import csv
 # -------------------------------
 def ler_csv(arquivo):
     dados = []
-    with open(arquivo, encoding="latin-1") as f:
-        leitor = csv.DictReader(f)
+    with open(arquivo, encoding="latin-1") as a:
+        leitor = csv.DictReader(a)
         for linha in leitor:
             linha_limpa = {chave: (valor.strip() if valor.strip() != "" else "0") for chave, valor in linha.items()}
             dados.append(linha_limpa)
