@@ -36,7 +36,7 @@ def media_campo(dados, campo):
 def frequencia(dados, campo): #artistas +freq e genero +freq 
     
     contagem = {}
-    
+          
     for musica in dados:
         valor = musica[campo]
         
@@ -223,8 +223,7 @@ def menu(dados):
             print("Opção inválida.")
 
 
-# Execução principal
-if __name__ == "__main__":
-    dados = ler_csv("projeto/top10s.csv")
-    gerar_relatorio(dados)
-    menu(dados)
+
+dados = ler_csv("projeto/top10s.csv")
+gerar_relatorio(dados)
+menu(dados)
