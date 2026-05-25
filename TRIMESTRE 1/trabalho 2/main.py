@@ -10,7 +10,7 @@ import seaborn as sns
 # -----------------------------
 # Parte 1 - Carregamento e Exploração Inicial
 # -----------------------------
-df = pd.read_csv("world_happiness_2026 (3).csv")
+df = pd.read_csv("trabalho 2\world_happiness_2026 (3).csv")
 
 print("Primeiras linhas:")
 print(df.head())
@@ -103,16 +103,19 @@ print(df[["country","score","indice_classificacao"]].head(15))
 # -----------------------------
 # Parte 4 - Visualizações
 # -----------------------------
+
+#10 países mais felizes do mundo
 plt.figure(figsize=(8,5))
 sns.barplot(x="country", y="score", data=df.head(10))
 plt.xticks(rotation=45)
 plt.title("Top 10 Países mais Felizes")
 plt.xlabel("País")
 plt.ylabel("Score")
-plt.savefig("top10_bar.png")
+plt.savefig("top10.png")
 plt.tight_layout()
 plt.show()
 
+#Distribuição de países por score
 plt.figure(figsize=(8,5))
 plt.hist(df["score"], bins=20, color="skyblue")
 plt.title("Distribuição do Score de Felicidade")
@@ -121,14 +124,17 @@ plt.ylabel("Frequência")
 plt.savefig("hist_score.png")
 plt.show()
 
+#Relação entre GPD e o score
 plt.figure(figsize=(8,5))
 plt.scatter(df["gdp_per_capita"], df["score"], color="green")
 plt.title("Relação entre GDP per capita e Score")
 plt.xlabel("GDP per capita")
 plt.ylabel("Score")
-plt.savefig("scatter_gdp_score.png")
+plt.savefig("relacao_gdp_score.png")
 plt.show()
 
+
+#Boxplot por região
 plt.figure(figsize=(8,5))
 sns.boxplot(x="region", y="score", data=df)
 plt.xticks(rotation=90)
@@ -137,11 +143,35 @@ plt.savefig("boxplot_region.png")
 plt.show()
 
 # -----------------------------
+# Parte 4 - Heatmap de Correlação
+# -----------------------------
+
+# Seleciona apenas colunas numéricas do DataFrame
+df_numerico = df.select_dtypes(include=["float64","int64"])
+
+# Calcula a matriz de correlação
+corr = df_numerico.corr()
+
+# Cria o mapa de calor com Seaborn
+plt.figure(figsize=(10,8))
+sns.heatmap(corr, annot=True, cmap="coolwarm", center=0)
+
+# Comentários:
+# - Cada célula mostra o coeficiente de correlação entre duas variáveis numéricas.
+# - Azul indica correlação positiva, vermelho indica negativa.
+# - Isso ajuda a identificar relações fortes, como GDP per capita vs score.
+plt.title("Mapa de Calor das Correlações")
+plt.savefig("heatmap_corr.png")
+plt.show()
+
+
+
+# -----------------------------
 # Parte 5 - Descobertas
 # -----------------------------
 print("\nDescobertas:")
 print("1. Países nórdicos lideram consistentemente o ranking de felicidade.")
-print("2. Há forte correlação positiva entre GDP per capita e score.")
+print("2. Há forte correlação positiva entre GDP per capita e score, mostrando a grande dependência da\n felicidade em relação o capital financeiro")
 print("3. Algumas regiões da América Latina aparecem com scores relativamente altos apesar de GDP menor.")
-print("4. A nova coluna 'adjusted_score' mostra que liberdade influencia bastante na percepção de felicidade.")
-print("5. A classificação em terços ajuda a visualizar quais países estão em índice alto, médio ou baixo.")
+print("4. Falando de geopolítica, países que foram colonizados consequentemente tem um score menor. Já\n páises que foram colonizadores apresentam níveis muito maiores ")
+print("5. A classificação em terços ajuda a visualizar de forma mais prática quais países estão em índice alto, médio ou baixo.")
